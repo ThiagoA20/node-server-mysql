@@ -6,7 +6,6 @@ try {
 
     async function Init() {
         await core.start()
-        core.stop()
     }
 
     Init()

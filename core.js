@@ -19,12 +19,12 @@ function createCore () {
         try {
             console.log("[Core] Connecting database...")
             await database.start()
+            console.log(`[Core] Succes, the application is running on port ${webserver.PORT}`)
+            console.log(JSON.stringify(await database.getInfo()))
         } catch (error){
             console.log("[Core] An error occurred while connecting to database, please check the logs!")
             console.log(error)
         }
-
-        console.log(`[Core] Succes, the application is running on port ${webserver.PORT}`)
     }
 
     async function stop(){
