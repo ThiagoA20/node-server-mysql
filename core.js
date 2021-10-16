@@ -20,11 +20,20 @@ function createCore () {
             console.log("[Core] Connecting database...")
             await database.start()
             console.log(`[Core] Succes, the application is running on port ${webserver.PORT}`)
-            console.log(JSON.stringify(await database.getInfo()))
         } catch (error){
             console.log("[Core] An error occurred while connecting to database, please check the logs!")
             console.log(error)
         }
+
+        requestResponse()
+    }
+
+    async function requestResponse() {
+        console.log(JSON.stringify(await database.getInfo()))
+        await database.addInfo()
+        await database.getInfo()
+        await database.deleteInfo()
+        await database.getInfo()
     }
 
     async function stop(){

@@ -47,9 +47,13 @@ function databaseMain(){
         return data
     }
 
-    function deleteInfo(){}
+    function deleteInfo(){
+        console.log("[Database] Deleting info...")
+    }
 
-    function addInfo(){}
+    function addInfo(){
+        console.log("[Database] Writing data on database...")
+    }
 
     function stop(){
         console.log("[Database] Stoping...")
